@@ -88,11 +88,11 @@ killedbygoogle.com
 .pull-left[
 1. Use of archivable aligned word embeddings (Facebook's FastText)
 
-2. From "bag-of-embeddings" to document-embeddings
+2. Convert "bag-of-embeddings" to document-embeddings
 
-3. Adjust for systematic differences between langauges with SVD
+3. Filter for systematic differences between langauges with SVD
 
-4. Guassian Mixture Model
+4. Fit a Guassian Mixture Model (GMM)
 ]
 
 .pull-right[
@@ -189,7 +189,7 @@ knitr::include_graphics("create_corpus.svg")
 ```
 
 ---
-# Step 3: Create document-feature matrix from word embeddings
+# Step 3: Create document-feature matrix with word embeddings
 
 ```r
 paris_dfm <- transform_dfm_boe(paris_corpus, emb)
@@ -215,7 +215,7 @@ paris_dfm_filtered <- filter_dfm(paris_dfm,
 ---
 class: hide-logo, hide-footer, middle
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message = FALSE}
 require(rectr)
 ```
 
@@ -275,13 +275,14 @@ plotly::ggplotly(topic_plot)
 ---
 # The team
 
+* Chung-hong Chan
 * Jing Zeng
-* Hartmut Wessler
-* Marc Jungblut
-* Kasper Welbers
-* Joseph Bajjalieh
+* Hartmut Wessler 
+* Marc Jungblut 
+* Kasper Welbers 
+* Joseph Bajjalieh 
 * Wouter van Atteveldt
-* Scott Althaus
+* Scott Althaus 
 
 Part of the [Responsible Terrorism Coverage](https://responsibleterrorismcoverage.org/) Project
 
