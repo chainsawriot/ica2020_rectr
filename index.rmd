@@ -303,6 +303,4 @@ class: center, hide-logo
 
 <img src ="rectr_logo.png" width = 400>
 
-`r fontawesome::fa("github")` : [chainsawriot/rectr](https://github.com/chainsawriot/rectr)
-
-Slides: [chainsawriot.github.io/ica2020_rectr](https://chainsawriot.github.io/ica2020_rectr)
+`r fontawesome::fa("github")` : [chainsawriot/rectr](https://github.com/chainsawriot/rectr) | Slides: [chainsawriot.github.io/ica2020_rectr](https://chainsawriot.github.io/ica2020_rectr)
