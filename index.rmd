@@ -1,5 +1,5 @@
 ---
-0;95;0ctitle: "rectr"
+title: "rectr"
 subtitle: "Reproducible Extraction of Cross-lingual Topics using R"
 author: "Chung-hong Chan"
 date: "`r Sys.Date()`"
@@ -96,25 +96,11 @@ killedbygoogle.com
 <img src = "humaneval.png" width = 500>
 
 ]
----
-class: center, hide-logo, hide-footer
 
-<img src ="rectr_logo.png" width = 500>
-
-In an easy-to-use `r fontawesome::fa("r-project")` package
-
+In an easy-to-use `r fontawesome::fa("r-project")` package: rectr
 
 ---
-background-image: url(https://media.giphy.com/media/vFKqnCdLPNOKc/source.gif)
-background-position: center
-background-size: cover
-class: hide-logo, center,  hide-footer, bottom
-
-.imagelab[Es gibt keinen Kater: A Practical Scenario]
-
----
-
-# Data
+# An example
 
 3139 articles with the keyword **Paris** from Nov 1 2015 to Dec 31 2015 from The New York Times (English), Süddeutsche Zeitung (German) and Le Figaro (French).
 
@@ -130,22 +116,26 @@ c("fr", "de", "en")
 
 # Step 0: Download word embeddings
 
+.pull-left[
+
 ```{r, eval = FALSE}
 get_ft("fr")
 get_ft("de")
 get_ft("en")
 ```
 
+]
+
+.pull-right[
+
+<img src = "ft_download.webp" width = 500>
+
+]
+
 You can archive the word embeddings, hence it is reproducible.
 
 ---
-background-image: url(ft_download.webp)
-background-position: center
-background-size: cover
-class: hide-logo, center,  hide-footer, bottom
-
----
-# Step 2: Read word embeddings
+# Step 1: Read word embeddings
 
 ```r
 emb <- read_ft(c("fr", "de", "en"))
@@ -182,8 +172,6 @@ docvars(paris_corpus, "id") <- paris$id
 paris_dfm <- transform_dfm_boe(paris_corpus, emb)
 ```
 
----
-
 ```{r}
 paris_dfm
 ```
@@ -193,15 +181,6 @@ paris_dfm
 
 k: number of topics
 
-```r
-paris_dfm_filtered <- filter_dfm(paris_dfm,
-                                 paris_corpus, k = 5)
-```
-
----
-class: hide-logo, hide-footer, middle
-
-
 ```{r}
 paris_dfm_filtered <- filter_dfm(paris_dfm,
                                  paris_corpus, k = 5)
@@ -210,14 +189,6 @@ paris_dfm_filtered
 
 ---
 # Step 5: Fit a Guassian Mixture Model
-
-```r
-paris_gmm <- calculate_gmm(paris_dfm_filtered, seed = 42)
-paris_gmm
-dim(paris_gmm$theta)
-```
----
-class: hide-logo, hide-footer, middle
 
 ```{r}
 paris_gmm <- calculate_gmm(paris_dfm_filtered, seed = 42)
