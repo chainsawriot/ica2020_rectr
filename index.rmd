@@ -223,7 +223,7 @@ DT::datatable(res, options = list(pageLength = 5)) %>% DT::formatRound("prob", 2
 * Chung-hong Chan (U Mannheim)
 * Jing Zeng (UZH)
 * Hartmut Wessler (U Mannheim)
-* Marc Jungblut (Munich)
+* Marc Jungblut (LMU München)
 * Kasper Welbers (VU Amsterdam)
 * Joseph Bajjalieh  (VU Amsterdam)
 * Wouter van Atteveldt (UIUC)
